@@ -6,7 +6,7 @@
     "useIgnoreFile": true
   },
   "files": {
-    "includes": ["**/*", "!**/*/tsconfig.json"],
+    "includes": ["**/*", "!**/*/tsconfig.json", "!**/*.ico", "!**/*.lock"],
     "ignoreUnknown": true
   },
   "formatter": {
