@@ -19,8 +19,8 @@ import {
   SidebarRail,
 } from "@/components/ui/sidebar";
 import { NavUser } from "./nav-user";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 
-// This is sample data.
 const data = {
   user: {
     name: "shadcn",
@@ -29,137 +29,17 @@ const data = {
   },
   navMain: [
     {
-      title: "Getting Started",
-      url: "#",
+      title: "Favorites",
       items: [
         {
           title: "Installation",
           url: "#",
+          avatar: "/avatars/shadcn.jpg",
         },
         {
           title: "Project Structure",
           url: "#",
-        },
-      ],
-    },
-    {
-      title: "Build Your Application",
-      url: "#",
-      items: [
-        {
-          title: "Routing",
-          url: "#",
-        },
-        {
-          title: "Data Fetching",
-          url: "#",
-          isActive: true,
-        },
-        {
-          title: "Rendering",
-          url: "#",
-        },
-        {
-          title: "Caching",
-          url: "#",
-        },
-        {
-          title: "Styling",
-          url: "#",
-        },
-        {
-          title: "Optimizing",
-          url: "#",
-        },
-        {
-          title: "Configuring",
-          url: "#",
-        },
-        {
-          title: "Testing",
-          url: "#",
-        },
-        {
-          title: "Authentication",
-          url: "#",
-        },
-        {
-          title: "Deploying",
-          url: "#",
-        },
-        {
-          title: "Upgrading",
-          url: "#",
-        },
-        {
-          title: "Examples",
-          url: "#",
-        },
-      ],
-    },
-    {
-      title: "API Reference",
-      url: "#",
-      items: [
-        {
-          title: "Components",
-          url: "#",
-        },
-        {
-          title: "File Conventions",
-          url: "#",
-        },
-        {
-          title: "Functions",
-          url: "#",
-        },
-        {
-          title: "next.config.js Options",
-          url: "#",
-        },
-        {
-          title: "CLI",
-          url: "#",
-        },
-        {
-          title: "Edge Runtime",
-          url: "#",
-        },
-      ],
-    },
-    {
-      title: "Architecture",
-      url: "#",
-      items: [
-        {
-          title: "Accessibility",
-          url: "#",
-        },
-        {
-          title: "Fast Refresh",
-          url: "#",
-        },
-        {
-          title: "Next.js Compiler",
-          url: "#",
-        },
-        {
-          title: "Supported Browsers",
-          url: "#",
-        },
-        {
-          title: "Turbopack",
-          url: "#",
-        },
-      ],
-    },
-    {
-      title: "Community",
-      url: "#",
-      items: [
-        {
-          title: "Contribution Guide",
-          url: "#",
+          avatar: "/avatars/shadcn.jpg",
         },
       ],
     },
@@ -180,7 +60,7 @@ export function AppSidebar() {
             defaultOpen
             className="group/collapsible"
           >
-            <SidebarGroup>
+            <SidebarGroup className="gap-1">
               <SidebarGroupLabel className="text-sidebar-foreground hover:bg-sidebar-accent hover:text-sidebar-accent-foreground">
                 <CollapsibleTrigger className="flex w-full items-center justify-between group/label">
                   <span>{item.title}</span>
@@ -195,10 +75,13 @@ export function AppSidebar() {
                   <SidebarMenu>
                     {item.items.map((item) => (
                       <SidebarMenuItem key={item.title}>
-                        <SidebarMenuButton
-                          isActive={item.isActive}
-                          className="text-xs"
-                        >
+                        <SidebarMenuButton className="text-xs bg-red-400 rounded-sm h-14 p-3">
+                          <Avatar className="h-10 w-10 ">
+                            <AvatarImage src={item.avatar} alt={item.title} />
+                            <AvatarFallback className="">
+                              {item.title.charAt(0).toUpperCase()}
+                            </AvatarFallback>
+                          </Avatar>
                           <a href={item.url}>{item.title}</a>
                         </SidebarMenuButton>
                       </SidebarMenuItem>

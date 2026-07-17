@@ -1,6 +1,7 @@
+import { ServerWebSocket } from "bun";
 import { Elysia } from "elysia";
 
-const clients = new Set<WebSocket>();
+const clients = new Set<ServerWebSocket>();
 
 const app = new Elysia()
   .get("/", () => "Hello Elysia")
