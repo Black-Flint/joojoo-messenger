@@ -6,7 +6,13 @@
     "useIgnoreFile": true
   },
   "files": {
-    "includes": ["**/*", "!**/*/tsconfig.json", "!**/*.ico", "!**/*.lock"],
+    "includes": [
+      "**/*",
+      "!**/*/tsconfig.json",
+      "!**/*.ico",
+      "!**/*.lock",
+      "!**/components/ui/*.tsx"
+    ],
     "ignoreUnknown": true
   },
   "formatter": {
