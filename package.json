@@ -5,6 +5,8 @@
   "scripts": {
     "lint": "biome check .",
     "format": "biome check --write .",
+    "dev:web": "bun --filter @joojoo-messenger/web dev",
+    "dev:api": "bun --filter @joojoo-messenger/api dev",
     "build:web": "bun --filter @joojoo-messenger/web build",
     "build:api": "bun --filter @joojoo-messenger/api build"
   },
